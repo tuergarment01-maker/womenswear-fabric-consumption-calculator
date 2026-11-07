@@ -1,6 +1,7 @@
 (function (global) {
   'use strict';
-  const bases = { mini: 1.3, midi: 1.8, maxi: 2.4, blouse: 1.2, trousers: 1.6, skirt: null, blazer: null };
+  const bases = { mini: 1.3, midi: 1.8, maxi: 2.4, blouse: 1.2, trousers: 1.6, skirt: 1.35, blazer: 1.75 };
+  const editableBases = ['skirt', 'blazer'];
   const buffers = { linen: .06, blend: .05, cotton: .04, denim: .05, yarn: .05 };
   function calculate(v) {
     const knit = v.style === 'knit';
@@ -13,7 +14,7 @@
     if (knit ? ![3,5,7,9,12,14,16].includes(v.gauge) : ![114,140,150].includes(v.width)) throw Error('Choose a listed width or gauge.');
     const grading = v.distribution === undefined || v.distribution === 'regular' ? 1 : v.distribution === 'extended' ? 1.11 : NaN;
     if (!Number.isFinite(grading)) throw Error('Choose a valid size distribution.');
-    const shellBase = bases[v.style] === null ? v.customBase : bases[v.style];
+    const shellBase = editableBases.includes(v.style) ? (v.customBase ?? bases[v.style]) : bases[v.style];
     if (!knit && (!Number.isFinite(shellBase) || shellBase <= 0 || shellBase > 20)) throw Error('Enter your pattern-based shell consumption at 145 cm (0–20 m).');
     const supportsLining = ['mini','midi','maxi','blouse','skirt','blazer'].includes(v.style);
     if (v.lining && !supportsLining) throw Error('Lining is available for dresses, blouses, skirts and blazers.');
@@ -40,7 +41,11 @@
     }
     function update() {
       const knit = form.elements.style.value==='knit', material=form.elements.fabric;
-      if (form.elements.style.value!==previous) { material.value=knit?'yarn':'linen'; previous=form.elements.style.value; }
+      if (form.elements.style.value!==previous) {
+        material.value=knit?'yarn':'linen';
+        previous=form.elements.style.value;
+        if (editableBases.includes(previous)) form.elements.customBase.value=bases[previous];
+      }
       Array.from(material.options).forEach(o=>o.disabled=knit ? o.value!=='yarn' : o.value==='yarn');
       $('[data-width]').hidden=knit; $('[data-gauge]').hidden=!knit; $('[data-price-label]').textContent=knit?'Yarn price (USD / kg, optional)':'Fabric price (USD / metre, optional)';
       const liningAllowed=['mini','midi','maxi','blouse','skirt','blazer'].includes(form.elements.style.value);
@@ -52,7 +57,7 @@
       $('[data-lining-material]').textContent=liningMaterial+' (planning default; confirm suitability).';
       try {
         const v={style:form.elements.style.value,fabric:material.value,width:+form.elements.width.value,gauge:+form.elements.gauge.value,colours:+form.elements.colours.value,sizes:+form.elements.sizes.value,quantities:Array.from(rows.querySelectorAll('input')).map(e=>e.value===''?NaN:+e.value),price:form.elements.price.value===''?0:+form.elements.price.value};
-        Object.assign(v,{distribution:form.elements.distribution.value,customBase:+form.elements.customBase.value,lining:form.elements.lining.checked,liningMode:form.elements.liningMode.value,liningWidth:+form.elements.liningWidth.value,interfacingPer:+form.elements.interfacing.value});
+        Object.assign(v,{distribution:form.elements.distribution.value,customBase:form.elements.customBase.value === '' ? undefined : +form.elements.customBase.value,lining:form.elements.lining.checked,liningMode:form.elements.liningMode.value,liningWidth:+form.elements.liningWidth.value,interfacingPer:+form.elements.interfacing.value});
         const r=calculate(v); error.textContent=''; output.hidden=false; cta.hidden=false;
         latest={v,r,liningMaterial}; $('[data-print]').disabled=false;
         $('[data-per]').textContent=knit?num(r.per)+' g':num(r.per)+' m / '+num(r.yards)+' yd';
