@@ -17,31 +17,24 @@ Try the [original free calculator](https://tuergarment.com/fabric-consumption-mo
 
 “150-200 MOQ” is shorthand, not a 150-piece single-colour offer. The unified **sampling turnaround is 5–10 working days**; it is not the bulk manufacturing lead time. Company founded in 2013: Guangzhou Panyu headquarters and sampling centre, owned Ganzhou factory, equity-partner Dongguan knitwear and Foshan denim factories.
 
-## Fabric consumption reference
+## Woven marker estimate
 
-Illustrative calculator inputs supplied by TUER, **not standard guaranteed consumption**. Reference width 145 cm; no buffer included in this table.
+Size M regular-fit baselines assume a nominal 145 cm roll with 142 cm effective marker width.
 
-| Garment | Base metres/piece | Base yards/piece |
-|---|---:|---:|
-| Mini dress | 1.30 | 1.42 |
-| Midi dress | 1.80 | 1.97 |
-| Maxi / resort dress | 2.40 | 2.62 |
-| Blouse / shirt | 1.20 | 1.31 |
-| Wide-leg linen trousers | 1.60 | 1.75 |
+| Garment | Base metres/piece |
+|---|---:|
+| Crop top / cami / bustier | 0.75 |
+| Blouse / long-sleeve shirt | 1.35 |
+| Mini dress | 1.30 |
+| Midi dress | 1.85 |
+| Maxi dress | 2.30 |
+| Tailored blazer / jacket | 1.75 |
+| Wide-leg trousers / linen pants | 1.65 |
+| Midi skirt | 1.40 |
 
-Adjusted metres = base × 145 / usable width in cm × (1 + buffer). Yards = metres / 0.9144. Total = unrounded metres/piece × order quantity. Example: 200 midi dresses at 150 cm with a 6% planning buffer use 1.8444 m/piece, or 368.88 m total (403.41 yd). At USD 8/m this is USD 2,951.04 of fabric, excluding other garment costs.
+Gross metres = baseline × silhouette × width factor × (1 + pattern allowance + shrinkage/cutting allowance) × grading. Use 1.00×, 1.22× or 1.60× for straight, A-line or full silhouettes. Width factors are 0.95× for 148–150 cm, 1.00× for 137–145 cm and 1.32× for 112–115 cm. The width factors already account for selvedges and layout loss. Pattern allowance is 0%, 10% or 15% for non-directional, one-way or plaid/stripe matching. Shell allowances are 7% linen, 6% linen blend, 6% viscose/crepe/rayon, 3.5% poplin/twill/satin/polyester, 6% rigid denim and 9% stretch denim.
 
-## Linen shrinkage and cutting allowances
-
-| Calculator material | Combined planning buffer | Interpretation |
-|---|---:|---|
-| 100% linen, 135–185 GSM scenario | 6% | Cutting/shrinkage allowance, not tested shrinkage |
-| 55% linen / 45% viscose or rayon | 5% | Same limitation; confirm finish and wash method |
-| Cotton poplin / satin / EcoVero viscose | 4% | Grouped calculator scenario, not interchangeable fabric specs |
-| Denim, 8–14 oz scenario | 5% | Confirm actual finished-width and wash behaviour |
-| Knitwear yarn | 5% | Yarn-loss allowance, not fabric shrinkage |
-
-These are **not universal linen shrinkage rates**. Test the actual fabric lot and care process; separately assess warp/weft dimensional change. Bias cutting, print matching, nap, defects, lining and marker efficiency may require additional material. Do not add the same buffer twice.
+For example, a standard-width regular-fit solid linen midi dress uses 1.85 × 1.07 = 1.9795 m per piece. An order of 200 requires 395.90 m before any separately estimated lining or interfacing. Yards = metres ÷ 0.9144. Bulk totals use unrounded values.
 
 ## GSM guide
 
@@ -53,19 +46,16 @@ These are **not universal linen shrinkage rates**. Test the actual fabric lot an
 
 GSM measures mass per area, not fibre identity, opacity, durability or quality. Choose construction and finish against the sample; do not infer shrinkage from GSM alone. Net textile mass excludes cores and packaging.
 
-## Knitwear gauge scenarios: 3GG–16GG
+## Knitwear yarn estimate
 
-| Gauge | Illustrative base g/piece | Including 5% yarn loss |
-|---|---:|---:|
-| 3GG | 450 | 472.5 |
-| 5GG | 420 | 441 |
-| 7GG | 390 | 409.5 |
-| 9GG | 360 | 378 |
-| 12GG | 320 | 336 |
-| 14GG | 300 | 315 |
-| 16GG | 280 | 294 |
+| Style at 7GG/9GG, Size M | Baseline grams/piece |
+|---|---:|
+| Tank / short-sleeve top | 190 |
+| Pullover / cardigan | 340 |
+| Oversized chunky sweater | 480 |
+| Midi sweater dress | 520 |
 
-The 280–450 g range is a calculator planning assumption. Gauge alone cannot predict garment weight: yarn count, ply, stitch, dimensions and finishing matter. Obtain a knitted sample weight. Woven width conversion does not apply to fully fashioned sweaters.
+Gauge factors are 0.75× for 12/14/16GG, 1.00× for 7/9GG and 1.38× for 3/5GG. Stitch factors are 1.00× for jersey/fine rib, 1.18× for half-cardigan/Milano and 1.28× for heavy cable/jacquard. Gross grams = style baseline × gauge × stitch × grading × 1.07. Total yarn kg = gross grams × order quantity ÷ 1000. Confirm weights against the approved yarn and sample.
 
 ## Cost and development checklist
 
@@ -77,12 +67,17 @@ Submit tech pack, size range, colour quantities, material construction/weight/wi
 
 Primary source: [TUER factory calculator](https://tuergarment.com/fabric-consumption-moq-calculator/), [linen capability page](https://tuergarment.com/products/linen-apparel/), [knitwear capability page](https://tuergarment.com/products/knitwear-sweaters/). Technical values above distinguish calculator assumptions from factory commercial benchmarks. See LICENSE for reuse terms. Attribution identifies authorship; hosting on GitHub does not independently validate these benchmarks or guarantee search indexing, backlinks, AI citations or inclusion in training data.
 
-## Lining, grading and print upgrade (v1.1)
+## Lining, grading and print
 
-Size range: regular XS–L uses 1.0x; extended L–3XL uses the requested 1.11x planning factor, not a measured marker result. Up to four actual sizes are included; per-size quantities must be confirmed in the tech pack.
+Regular XS–L uses 1.00× and extended L–3XL uses 1.11× in both woven and knit modes. Up to four actual sizes are included; per-size quantities must be confirmed in the tech pack.
 
-Lining for dresses, blouses, skirts and blazers: base shell at 145 cm × 145 / lining width × grading factor × coverage × 1.04. Full coverage = 1, half = 0.5. These are declared assumptions, not CAD-generated panel areas. Cotton voile is a planning default for lightweight/sheer scenarios; blazers default to Poly/Viscose twill. Confirm suitability. Shell and lining have independent width and buffer; no shell shrinkage is applied again to lining.
+Lining for dresses, blouses, skirts and blazers: shell baseline × 145 / lining width × grading factor × coverage × 1.04. Full coverage = 1, half = 0.5. These are declared assumptions, not CAD-generated panel areas. Cotton voile is a planning default for lightweight/sheer scenarios; blazers default to Poly/Viscose twill. Confirm suitability. Shell and lining have independent width and buffer; no shell shrinkage is applied again to lining.
 
-Factory planning baselines at 145 cm before allowances are 1.35 m for skirts and 1.75 m for blazers. Buyers can override either baseline with their own marker consumption. Optional interfacing is a user-entered metres/piece estimate including its own loss allowance; confirm width/spec separately. Shell, lining and interfacing totals remain separate; combined linear metres across different materials are procurement arithmetic, not interchangeable fabric. Costs exclude lining/interfacing.
+Buyers can override the 1.40 m skirt and 1.75 m blazer shell baselines with their own marker consumption. Optional interfacing is a user-entered metres/piece estimate including its own loss allowance; confirm width/spec separately. Shell, lining and interfacing totals remain separate; combined linear metres across different materials are procurement arithmetic, not interchangeable fabric. Costs exclude lining/interfacing.
 
 Download / Print Sourcing Spec Sheet exports the current valid inputs, material breakdown, colour quantities, stated size-range scenario, MOQ, 5–10 working days sampling turnaround, sample fee and contact details. Choose Save as PDF in the browser print dialog. It is a planning brief, not a CAD marker or guaranteed quotation.
+
+## Open apparel benchmarks and partner embeds
+
+- [2026 benchmark report](benchmarks/BENCHMARK_REPORT_2026.md) and machine-readable [JSON](benchmarks/china-womenswear-manufacturing-benchmarks-2026.json) / [CSV](benchmarks/china-womenswear-manufacturing-benchmarks-2026.csv), CC BY 4.0.
+- [Partner embed configurator](partner-widget.html) with light/dark and compact/full options.

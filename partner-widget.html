@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TUER Partner Calculator Embed Configurator</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f8f2;color:#183c36;font:16px/1.5 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:24px}h1{font:600 clamp(26px,5vw,42px) Georgia,serif}fieldset{border:1px solid #bdcfc5;padding:16px;display:flex;flex-wrap:wrap;gap:16px}label{display:grid;gap:4px}select,button,textarea{font:inherit;padding:8px}button{background:#183c36;color:white;border:0;cursor:pointer;margin:12px 0}textarea{width:100%;height:112px}iframe{display:block;border:1px solid #bdcfc5;width:100%}a{color:#135f4f}:focus-visible{outline:3px solid #ca8c31;outline-offset:3px}
+</style>
+<main>
+<p>TUER / Partner resources</p>
+<h1>Partner Calculator Embed Configurator</h1>
+<p>Give readers a free fabric and yarn planning tool. Choose a layout and keep the visible source credit below the calculator.</p>
+<fieldset><legend>Embed options</legend>
+<label>Theme<select id="theme"><option value="light">Light mode</option><option value="dark">Dark mode</option></select></label>
+<label>Layout<select id="layout"><option value="compact">Compact sidebar</option><option value="full" selected>Full width</option></select></label>
+</fieldset>
+<button id="copy" type="button">Copy 1-Line Embed Snippet</button><p id="status" role="status"></p>
+<label>Embed HTML<textarea id="snippet" readonly spellcheck="false"></textarea></label>
+<p>Paste the snippet into a Custom HTML block. The frame scrolls within its allotted height.</p>
+<h2>Interactive preview</h2>
+<iframe id="preview" title="Preview of the TUER fabric consumption calculator"></iframe>
+<p><a href="https://tuergarment01-maker.github.io/womenswear-fabric-consumption-calculator/benchmarks/BENCHMARK_REPORT_2026.md">Read the 2026 benchmark report</a></p>
+</main>
+<script>
+'use strict';
+const theme=document.querySelector('#theme'),layout=document.querySelector('#layout'),preview=document.querySelector('#preview'),snippet=document.querySelector('#snippet'),status=document.querySelector('#status');
+const published='https://tuergarment01-maker.github.io/womenswear-fabric-consumption-calculator/';
+const credit='Powered by TUER Garment CAD Sourcing Engine — 150-200 MOQ &amp; 5-10 Day Sampling';
+function update(){
+  const compact=layout.value==='compact';
+  const query=new URLSearchParams({embed:'1',theme:theme.value,layout:layout.value});
+  const width=compact?'380px':'100%',height=compact?660:780;
+  const localPage=location.pathname.endsWith('/partner-preview.html')?'../open-apparel-calculator-repo/index.html':'./index.html';
+  preview.src=localPage+'?'+query;
+  preview.style.maxWidth=width;
+  preview.height=height;
+  snippet.value='<div style="max-width:'+width+'"><iframe src="'+published+'?'+query.toString().replaceAll('&','&amp;')+'" title="TUER Fabric &amp; MOQ Calculator" width="100%" height="'+height+'" style="border:0" loading="lazy" allow="clipboard-write"></iframe><p><a rel="nofollow" href="https://tuergarment.com/fabric-consumption-moq-calculator/">'+credit+'</a></p></div>';
+  status.textContent='';
+}
+theme.addEventListener('change',update);layout.addEventListener('change',update);
+document.querySelector('#copy').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(snippet.value);status.textContent='Embed snippet copied.';}
+  catch{snippet.focus();snippet.select();status.textContent=document.execCommand('copy')?'Embed snippet copied.':'Snippet selected. Press Ctrl+C or Command+C to copy.';}
+});
+update();
+</script>
+</html>
