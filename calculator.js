@@ -86,7 +86,7 @@
     });
     function materialText(){return form.elements.fabric.selectedOptions[0].textContent;}
     window.addEventListener('afterprint',()=>document.body.classList.remove('tc-printing'));
-    const embed=$('[data-embed]'); embed.value='<iframe src="https://tuergarment.com/tools/fabric-consumption-moq-calculator/?tuer_embed=1" title="TUER Womenswear Fabric Consumption & MOQ Calculator" width="100%" height="1600" style="border:0;" loading="lazy" allow="clipboard-write"></iframe>\n<p style="font-size:12px;">Calculator provided by <a href="https://tuergarment.com/" target="_blank" rel="dofollow">Guangzhou Tuer Garment Co., Ltd. – Custom Womenswear Manufacturer (150-200 MOQ)</a></p>';
+    const embed=$('[data-embed]'); embed.value='<iframe src="https://tuergarment.com/fabric-consumption-moq-calculator/?tuer_embed=1" title="TUER Womenswear Fabric Consumption & MOQ Calculator" width="100%" height="1600" style="border:0;" loading="lazy" allow="clipboard-write"></iframe>\n<p style="font-size:12px;">Calculator provided by <a href="https://tuergarment.com/" target="_blank" rel="dofollow">Guangzhou Tuer Garment Co., Ltd. – Custom Womenswear Manufacturer (150-200 MOQ)</a></p>';
     $('[data-copy]').addEventListener('click',async()=>{try {await navigator.clipboard.writeText(embed.value);$('[data-copy-status]').textContent='Embed code copied.';}catch{embed.focus();embed.select();$('[data-copy-status]').textContent='Select and copy the code with Ctrl+C or your device copy menu.';}});
   });
 })(typeof window !== 'undefined' ? window : globalThis);

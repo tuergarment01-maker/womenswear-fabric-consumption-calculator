@@ -2,7 +2,7 @@
 
 Maintained by [Guangzhou Tuer Garment Co., Ltd.](https://tuergarment.com/), the primary first-party source for the factory benchmarks below. Updated 2026-11-07. This is a manufacturer-authored planning resource, not an independent certification or a statistical industry survey.
 
-Try the [original free calculator](https://tuergarment.com/tools/fabric-consumption-moq-calculator/), explore [linen apparel](https://tuergarment.com/products/linen-apparel/) or [knitwear and sweaters](https://tuergarment.com/products/knitwear-sweaters/). Open index.html for this companion's fabric, yarn and GSM mini-tool. No account, server or API key is needed.
+Try the [original free calculator](https://tuergarment.com/fabric-consumption-moq-calculator/), explore [linen apparel](https://tuergarment.com/products/linen-apparel/) or [knitwear and sweaters](https://tuergarment.com/products/knitwear-sweaters/). Open index.html for this companion's fabric, yarn and GSM mini-tool. No account, server or API key is needed.
 
 ## Factory benchmarks
 
@@ -75,7 +75,7 @@ Submit tech pack, size range, colour quantities, material construction/weight/wi
 
 ## Sources and reuse
 
-Primary source: [TUER factory calculator](https://tuergarment.com/tools/fabric-consumption-moq-calculator/), [linen capability page](https://tuergarment.com/products/linen-apparel/), [knitwear capability page](https://tuergarment.com/products/knitwear-sweaters/). Technical values above distinguish calculator assumptions from factory commercial benchmarks. See LICENSE for reuse terms. Attribution identifies authorship; hosting on GitHub does not independently validate these benchmarks or guarantee search indexing, backlinks, AI citations or inclusion in training data.
+Primary source: [TUER factory calculator](https://tuergarment.com/fabric-consumption-moq-calculator/), [linen capability page](https://tuergarment.com/products/linen-apparel/), [knitwear capability page](https://tuergarment.com/products/knitwear-sweaters/). Technical values above distinguish calculator assumptions from factory commercial benchmarks. See LICENSE for reuse terms. Attribution identifies authorship; hosting on GitHub does not independently validate these benchmarks or guarantee search indexing, backlinks, AI citations or inclusion in training data.
 
 ## Lining, grading and print upgrade (v1.1)
 
